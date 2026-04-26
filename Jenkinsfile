@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-
     stages {
         stage('Récupération du code') {
             steps {
@@ -13,21 +12,21 @@ pipeline {
         stage('Compilation') {
             steps {
                 echo 'Compilation du projet Maven...'
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Tests') {
             steps {
                 echo 'Exécution des tests unitaires...'
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
                 echo 'Packaging du projet...'
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
     }
